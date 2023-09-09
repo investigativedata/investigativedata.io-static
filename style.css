@@ -1,0 +1,13 @@
+@import url("https://cdn.investigativedata.org/style/style.css");
+
+.contact-pane {
+  flex-direction: row;
+}
+.contact-pane section {
+  flex: 2;
+}
+.contact-pane section.--flex-1 {
+  padding-left: var(--M);
+  border-left: 0.25rem solid var(--black);
+  flex: 1;
+}

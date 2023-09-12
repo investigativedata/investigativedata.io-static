@@ -1,5 +1,15 @@
 @import url("https://cdn.investigativedata.org/style/style.min.css");
 
+html {
+  background: var(--black);
+}
+
+code {
+  font-family: var(--font-family-mono);
+  font-size: 0.5rem;
+  line-height: 1;
+}
+
 @media only screen and (min-width: 48em) {
   .contact-pane {
     flex-direction: row;
@@ -11,5 +21,8 @@
     padding-left: var(--M);
     border-left: 0.25rem solid var(--black);
     flex: 1;
+  }
+  code {
+    font-size: 1.5rem;
   }
 }

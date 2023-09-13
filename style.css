@@ -1,16 +1,125 @@
-@import url("https://cdn.investigativedata.org/style/style.min.css");
+@import url("https://cdn.investigativedata.org/style/base.min.css");
 
-html {
-  background: var(--black);
+:root {
+  scroll-behavior: smooth;
 }
 
+/* DEFAULT PAGE LAYOUT */
+html {
+  font-size: var(--font-size);
+  background-color: var(--primary);
+}
+body {
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.3;
+  background-color: var(--primary);
+  color: var(--black);
+  font-family: var(--font-family-body);
+  font-size: 1.3125rem;
+}
+header {
+  padding: 3.75rem var(--S) 1.37rem var(--S);
+  font-size: 0.937rem;
+  background-color: inherit;
+}
+header .container > * {
+  flex: 1;
+}
+header img {
+  height: 3rem;
+  width: auto;
+}
+header nav {
+  text-align: right;
+}
+main div.page-wrapper {
+  min-height: 100vh;
+}
+main section.page {
+  padding: var(--S) var(--S) var(--XL) var(--S);
+}
+main section.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main h1 {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-brand);
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 400;
+}
+main h1 em {
+  font-style: normal;
+  text-decoration: underline;
+}
+main p {
+  margin: 0;
+  padding: 0;
+}
+footer {
+  width: 100%;
+  display: flex;
+  gap: var(--S);
+  justify-content: center;
+  padding-top: 3.75rem;
+  padding-bottom: var(--M);
+  color: inherit;
+  font-size: 0.9375rem;
+}
+footer a.active {
+  font-weight: bold;
+}
+.container {
+  margin: 0 auto;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 code {
   font-family: var(--font-family-mono);
   font-size: 0.5rem;
   line-height: 1;
 }
+nav svg path {
+  fill: var(--black);
+}
+.--bg-inverted nav svg path {
+  fill: var(--secondary);
+}
 
+/* DESKTOP */
 @media only screen and (min-width: 48em) {
+  body {
+    font-size: 2.1875rem;
+  }
+  header {
+    padding: var(--S) var(--XL);
+    font-size: 1.3125rem;
+  }
+  header img {
+    height: 3.125rem;
+  }
+  header nav svg {
+    width: auto;
+    height: 2.439rem;
+  }
+  main section.page {
+    padding: var(--XL);
+  }
+  main h1 {
+    font-size: 3.75rem;
+  }
+  .--flex-columns {
+    gap: var(--M);
+    flex-direction: row !important;
+  }
   .contact-pane {
     flex-direction: row;
   }

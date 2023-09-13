@@ -94,8 +94,18 @@ nav svg path {
   fill: var(--secondary);
 }
 
-/* DESKTOP */
+/* SMART WIDE */
+@media only screen and (min-width: 30em) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* TABLET/DESKTOP */
 @media only screen and (min-width: 48em) {
+  html {
+    font-size: 14px;
+  }
   body {
     font-size: 2.1875rem;
   }

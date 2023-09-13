@@ -1,0 +1,42 @@
+name: Deploy Preview
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  preview:
+    environment:
+      name: preview
+      url: https://dev.investigativedata.io/${{ github.sha }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --exclude '.git*'
+        env:
+          AWS_S3_BUCKET: dev.investigativedata.io
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
+          AWS_REGION: "eu-central-1"
+          DEST_DIR: ${{ github.sha }}
+  develop:
+    environment:
+      name: develop
+      url: https://dev.investigativedata.io
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --exclude '.git*'
+        env:
+          AWS_S3_BUCKET: dev.investigativedata.io
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_S3_ENDPOINT: ${{ secrets.AWS_S3_ENDPOINT }}
+          AWS_REGION: "eu-central-1"

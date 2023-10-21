@@ -1,6 +1,9 @@
-all: clean build publish
+all: clean publish
 
-publish: build site cloud
+publish: build site cloud sync
+ 
+.PHONY: sync
+sync:
 	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync build s3://investigativedata.io
 	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync site s3://investigativedata.io/aleph
 	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync cloud s3://investigativedata.io/cloud

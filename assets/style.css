@@ -63,10 +63,6 @@ main h1 {
   font-style: normal;
   font-weight: 400;
 }
-main h1 em {
-  font-style: normal;
-  text-decoration: underline;
-}
 main p {
   margin: 0;
   padding: 0;

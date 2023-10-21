@@ -1,8 +1,9 @@
 all: clean build publish
 
-publish: build site
+publish: build site cloud
 	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync build s3://investigativedata.io
 	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync site s3://investigativedata.io/aleph
+	aws --profile ninja --endpoint-url https://s3.investigativedata.org --region eu-central-1 s3 sync cloud s3://investigativedata.io/cloud
 
 build/index.html: build/assets
 	cat index.html | sed -s s/style\.css/style\.min\.css/g > build/index.html

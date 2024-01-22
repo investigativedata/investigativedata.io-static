@@ -24,7 +24,7 @@ build/%:
 	cp $* build/
 
 .PHONY: build
-build: build/assets build/index.html build/qubes.txt build/assets/style.min.css
+build: build/assets build/index.html build/qubes.txt build/assets/style.min.css build/assets/logo_animation.json
 
 .PHONY: site
 site:

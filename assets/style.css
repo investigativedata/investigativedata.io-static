@@ -21,10 +21,11 @@ header {
   padding: 1.37rem var(--S);
   font-size: 0.937rem;
   background-color: inherit;
-  max-width: var(--max-width);
   margin: 0 auto;
 }
 header .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
 }
 header .container > * {
@@ -39,10 +40,12 @@ header nav {
 }
 main div.screen {
   min-height: 100vh;
-  max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
 }
 main .container {
+  margin: 0 auto;
+  max-width: var(--max-width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

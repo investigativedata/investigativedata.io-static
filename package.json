@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0",
+    "postcss-dropdupedvars": "^2.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-url": "^10.1.3"
+  }
+}

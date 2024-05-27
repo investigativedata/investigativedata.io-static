@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -20,15 +20,20 @@
       media="all"
     />
   </head>
+
   <body>
-    <header>
+    <header class="--bg-primary">
       <div class="container --flex-row --flex-center">
         <h3 class="--hide-md">investigative<br />data.io</h3>
         <h3 class="--show-md">investigativedata.io</h3>
-        <img
-          alt="||)·|()"
-          src="https://cdn.investigativedata.org/style/logo_basic_light.svg"
-        />
+        <dotlottie-player
+          src="./assets/logo_animation.json"
+          background="transparent"
+          speed="1"
+          style="width: auto; height: 3.125rem"
+          loop
+          autoplay
+          ></dotlottie-player>
         <nav>
           <a href="#nav-open">
             <svg
@@ -37,10 +42,10 @@
               viewBox="0 0 22 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-            >
+              >
               <g>
-                <path
-                  d="M11.9213 20H9.77843L0.599854 7.82143L3.42128 6.14286L9.957 17.4286L9.13557 0H12.5641L11.7427 17.4286L18.2784 6.14286L21.0999 7.82143L11.9213 20Z"
+              <path
+                d="M11.9213 20H9.77843L0.599854 7.82143L3.42128 6.14286L9.957 17.4286L9.13557 0H12.5641L11.7427 17.4286L18.2784 6.14286L21.0999 7.82143L11.9213 20Z"
                 />
               </g>
             </svg>
@@ -53,9 +58,8 @@
         <div class="container --gap-m">
           <section class="content --gap-s">
             <h1>
-              We provide <em>infrastructure</em>, <em>data catalogs</em>, and
-              <em>service know-how</em> to support investigative journalism and
-              research organizations
+              We do <u>secure infrastructure</u> and <u>data engineering</u> for
+              investigative journalism and research organizations
             </h1>
             <p class="animation-wrapper">
               as in<br />
@@ -70,9 +74,20 @@
               </span>
             </p>
           </section>
-          <a class="button" href="mailto:hi@investigativedata.org"
-            >Get in touch</a
-          >
+          <div class="--flex-columns --gap-l">
+            <section class="content --gap-s">
+              <a class="button" href="mailto:hi@investigativedata.org"
+                >Get&nbsp;in&nbsp;touch</a
+              >
+            </section>
+            <section class="content --gap-s">
+              <a
+                class="button"
+                href="https://cloud.investigativedata.net/apps/calendar/appointment/Lon9XfCYTcLP"
+                >Book&nbsp;a&nbsp;call</a
+              >
+            </section>
+          </div>
         </div>
       </div>
       <div class="screen --bg-inverted">
@@ -112,7 +127,7 @@
           </div>
         </div>
       </div>
-      <div class="screen --bg-secondary">
+      <div class="screen --bg-secondary" id="projects">
         <div class="container --gap-l">
           <h1>
             We are involved in many investigative journalism projects and
@@ -217,7 +232,7 @@
               >
             </small>
             <small>
-              IDIO Daten Import Export UG (haftungsbeschränkt)<br />
+              IDIO Daten Import Export GmbH<br />
               Gottschedstr. 4<br />
               13357 Berlin (Germany)<br />
             </small>
@@ -251,7 +266,12 @@
     <footer class="--bg-neutral">
       <a href="mailto:hi@investigativedata.org">Contact</a>
       <a href="https://investigativedata.io/aleph/legal/">Legal</a>
+      <a href="https://status.investigativedata.io">System Status</a>
       <span> <a href="#" class="active">EN</a> | DE </span>
     </footer>
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
   </body>
 </html>
